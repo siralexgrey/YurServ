@@ -1,0 +1,257 @@
+// Load CSS Reset from NPM
+@import "~normalize.css";
+
+$breakpoints: (
+  xs: 320px,
+  s:  375px,
+  sm: 480px,
+  m: 768px,
+  md: 976px,
+  lg: 1367px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin breakpoint($point) {
+  @if $point == xxl {
+    @media only screen and (min-width: map-get($breakpoints, 'xxl')) {
+      @content;
+    }
+  }
+
+  @if $point == xl {
+    @media only screen and (min-width: map-get($breakpoints, 'xl')) {
+      @content;
+    }
+  }
+
+  @else if $point == lg {
+    @media only screen and (min-width: map-get($breakpoints, 'lg')) {
+      @content;
+    }
+  }
+
+  @else if $point == md {
+    @media only screen and (min-width: map-get($breakpoints, 'md')) {
+      @content;
+    }
+  }
+
+  @else if $point == m {
+    @media only screen and (min-width: map-get($breakpoints, 'm')) {
+      @content;
+    }
+  }
+
+  @else if $point == sm {
+    @media only screen and (min-width: map-get($breakpoints, 'sm')) {
+      @content;
+    }
+  }
+
+  @else if $point == s {
+    @media only screen and (min-width: map-get($breakpoints, 's')) {
+      @content;
+    }
+  }
+
+  @else if $point == xs {
+    @media only screen and (max-width: map-get($breakpoints, 'xs')) {
+      @content;
+    }
+  }
+}
+
+html {
+  font-size: 2.666vw;
+
+  @include breakpoint(md) {
+    font-size: 0.625vw;
+  }
+
+  font-family: 'Roboto', sans-serif;
+}
+
+a.button {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.8rem;
+  background: #9b9bca;
+  text-decoration: none;
+  padding: 1.5rem 6.5rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  transition: background-color ease-in-out 0.17s;
+
+  &:hover {
+    background: #707094;
+  }
+}
+
+section {
+  padding: 0 1rem;
+
+  @include breakpoint(md) {
+    padding: 0 24.5rem;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.1rem 1rem;
+    margin: 0 -1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+
+    @include breakpoint(md) {
+      margin: 0 -24.5rem;
+      padding: 3.1rem 24.5rem;
+    }
+
+    .right {
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+
+  &#posthead {
+    background-image: url('../images/bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .body {
+      padding: 14rem 0;
+      max-width: 75.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include breakpoint(md) {
+        padding: 19.6rem 0;
+      }
+
+      h1 {
+        font-size: 5.6rem;
+        color: #696a86;
+      }
+
+      p {
+        font-size: 1.8rem;
+        color: #696a86;
+      }
+    }
+  }
+
+  &#info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    @include breakpoint(md) {
+      padding: 5rem 24.5rem;
+    }
+
+    .list {
+      .item {
+        margin-bottom: 1.2rem;
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 53rem;
+        }
+
+        a {
+          color: #402b2b;
+          font-size: 1.8rem;
+          line-height: 3rem;
+          padding: 2.5rem 3.5rem;
+          box-shadow: 0 5px 10px #e0e0e0;
+          border-radius: 2.3rem;
+          position: relative;
+          text-decoration: none;
+          background-color: #fff;
+          transition: background-color ease-in-out 0.17s;
+
+          &:hover {
+            background: #9b9bca;
+            color: #fff;
+          }
+        }
+
+        div {
+          background: #f5f5ff;
+          box-shadow: 0 25px 59px rgba(191, 191, 236, 0.72);
+          border-radius: 2.3rem;
+          padding: 13rem 3.5rem 6rem 3.5rem;
+          margin-top: calc((13rem - 4rem) * -1);
+          font-size: 1.8rem;
+          line-height: 3rem;
+          margin-bottom: 7rem;
+        }
+      }
+    }
+
+    .left {
+      h2 {
+        font-size: 4.8rem;
+        font-weight: normal;
+      }
+    }
+
+    .right {
+      padding-top: 0.6rem;
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+      }
+
+      img {
+        width: 53.5rem;
+      }
+    }
+
+    .accordion-toggle {
+      display: block;
+    }
+
+    .accordion-content {
+      display: none;
+    }
+
+    .accordion-content.active {
+      display: block;
+    }
+  }
+}
+
+footer {
+  background-color: #9b9bca;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  @include breakpoint(md) {
+    padding: 5rem 24.5rem;
+    border-radius: 100vw 100vw 0 0;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.8rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 1.6rem 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
