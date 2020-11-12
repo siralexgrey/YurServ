@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyD6tQkkR1rskFyzX3hoGJf475TXOvTU3Bw",
+        authDomain: "yurservice-72a54.firebaseapp.com",
+        databaseURL: "https://yurservice-72a54.firebaseio.com",
+        projectId: "yurservice-72a54",
+        storageBucket: "yurservice-72a54.appspot.com",
+        messagingSenderId: "871305977719",
+        appId: "1:871305977719:web:f282803ea122b43e474b72",
+        measurementId: "G-6ZCCLBSML3"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
     <meta charset="utf-8">
-    <title>Юридические услуги. Бахмут</title>
-    <meta name="description" content="" />
+    <title>Юридические услуги. Бахмут.</title>
+    <meta name="description" content="Юридические услуги - мы предоставляем квалифицированные юридические консультации как в офисе так и в телефонном режиме и onlinе." />
+    <meta name="keywords" content="Юрист, адвокат, услуги, Бахмут, Артемовск, услуги, право, суд, юридичні, послуги" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <section name="posthead" id="posthead">
     <header>
       <div class="left">
-        <div class="logo">Логотип</div>
+        <div class="logo">
+          <img src="./images/logo.svg" alt="Logo">
+          <h2>Юридические услуги</h2>
+        </div>
       </div>
       <div class="right">
         <a href="tel:+380991234567" class="button">Позвонить</a>

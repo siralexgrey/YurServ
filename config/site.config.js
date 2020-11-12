@@ -9,10 +9,10 @@ if (!ROOT) {
 
 const config = {
   // Your website's name, used for favicon meta tags
-  site_name: 'YurServ',
+  site_name: 'Юридические услуги',
 
   // Your website's description, used for favicon meta tags
-  site_description: 'A modern boilerplate for static website development',
+  site_description: 'Юридические услуги - мы предоставляем квалифицированные юридические консультации как в офисе так и в телефонном режиме и onlinе.',
 
   // Your website's URL, used for sitemap
   site_url: 'https://yurist.bachmut.ua',
