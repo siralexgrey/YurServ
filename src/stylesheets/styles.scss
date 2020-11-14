@@ -117,6 +117,10 @@ section {
         img {
           width: 8rem;
           margin-right: 1.6rem;
+
+          @include breakpoint(m) {
+            width: 15rem;
+          }
         }
 
         h2 {
@@ -131,7 +135,19 @@ section {
       display: none;
 
       @include breakpoint(md) {
-        display: block;
+        display: flex;
+        flex-direction: column;
+
+        a {
+          color: #696a86;
+          text-decoration: none;
+          font-size: 1.8rem;
+          margin: 1rem 0;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
@@ -149,12 +165,12 @@ section {
       align-items: flex-start;
 
       @include breakpoint(md) {
-        padding: 19.6rem 0;
+        padding: 9.6rem 0;
       }
 
       h1 {
         font-size: 4.8rem;
-        color: #696a86;
+        color: #000;
 
         @include breakpoint(m) {
           font-size: 5.6rem;
